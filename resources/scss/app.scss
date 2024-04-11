@@ -1,7 +1,5 @@
 @use './partials/variables' as *;
 @import "~bootstrap/scss/bootstrap";
-@import './partials/header';
-@import './partials/footer';
 
 * {
     margin: 0;
@@ -118,6 +116,15 @@
     width: 100%;
     height: 400px;
     position: relative;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+#jumbo-bonus {  
     img {
         height: 100%;
         width: 100%;

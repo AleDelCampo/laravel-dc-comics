@@ -15,23 +15,23 @@ class ComicController extends Controller
         $comics = Comic::all();
         $icons = [
             [
-                'icon' => 'public/img/buy-comics-digital-comics.png',
+                'icon' => asset('img/buy-comics-digital-comics.png'),
                 'caption' => "DIGITAL COMICS",
             ],
             [
-                'icon' => 'public/img/buy-comics-merchandise.png',
+                'icon' => asset('img/buy-comics-merchandise.png'),
                 'caption' => "DC MERCHANDISE",
             ],
             [
-                'icon' => 'public/img/buy-comics-subscriptions.png',
+                'icon' => asset('img/buy-comics-subscriptions.png'),
                 'caption' => "SUBSCRIPTION",
             ],
             [
-                'icon' => 'public/img/buy-comics-shop-locator.png',
+                'icon' => asset('img/buy-comics-shop-locator.png'),
                 'caption' => "COMIC SHOP LOCATOR",
             ],
             [
-                'icon' => 'public/img/buy-dc-power-visa.svg',
+                'icon' => asset('img/buy-dc-power-visa.svg'),
                 'caption' => "DC POWER VISA",
             ],
         ];
@@ -138,23 +138,23 @@ class ComicController extends Controller
     {
         $icons = [
             [
-                'icon' => 'public/img/buy-comics-digital-comics.png',
+                'icon' => asset('img/buy-comics-digital-comics.png'),
                 'caption' => "DIGITAL COMICS",
             ],
             [
-                'icon' => 'public/img/buy-comics-merchandise.png',
+                'icon' => asset('img/buy-comics-merchandise.png'),
                 'caption' => "DC MERCHANDISE",
             ],
             [
-                'icon' => 'public/img/buy-comics-subscriptions.png',
+                'icon' => asset('img/buy-comics-subscriptions.png'),
                 'caption' => "SUBSCRIPTION",
             ],
             [
-                'icon' => 'public/img/buy-comics-shop-locator.png',
+                'icon' => asset('img/buy-comics-shop-locator.png'),
                 'caption' => "COMIC SHOP LOCATOR",
             ],
             [
-                'icon' => 'public/img/buy-dc-power-visa.svg',
+                'icon' => asset('img/buy-dc-power-visa.svg'),
                 'caption' => "DC POWER VISA",
             ],
         ];
