@@ -10,7 +10,10 @@
 </head>
 <body>
     
-
+    @include('comics/header')
+    @include('comics/jumbo')
     @yield('content')
+    @include('comics/icons')
+    @include('comics/footer')
 </body>
 </html>
