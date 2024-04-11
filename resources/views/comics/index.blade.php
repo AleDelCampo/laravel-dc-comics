@@ -12,10 +12,8 @@
     </a>
     @endforeach
 
-    <div>
-        <button id="load-btn" class="pointer">
-            LOAD MORE
-        </button>
+    <div class="mt-4 mb-4">
+        <a href="{{route('comics.create')}}" class="btn btn-primary">Inserisci il tuo fumetto preferito!!</a>
     </div>
 </div>
 @endsection
