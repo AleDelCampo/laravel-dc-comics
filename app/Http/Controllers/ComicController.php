@@ -13,93 +13,9 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        $icons = [
-            [
-                'icon' => asset('img/buy-comics-digital-comics.png'),
-                'caption' => "DIGITAL COMICS",
-            ],
-            [
-                'icon' => asset('img/buy-comics-merchandise.png'),
-                'caption' => "DC MERCHANDISE",
-            ],
-            [
-                'icon' => asset('img/buy-comics-subscriptions.png'),
-                'caption' => "SUBSCRIPTION",
-            ],
-            [
-                'icon' => asset('img/buy-comics-shop-locator.png'),
-                'caption' => "COMIC SHOP LOCATOR",
-            ],
-            [
-                'icon' => asset('img/buy-dc-power-visa.svg'),
-                'caption' => "DC POWER VISA",
-            ],
-        ];
-    
-        $linkss = [
-            [
-                'title' => "DC COMICS",
-                'list' => [
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'Tv',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                'title' => "SHOP",
-                'list' => [
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ],
-            [
-                'title' => "DC",
-                'list' => [
-                    'Terms Of Use',
-                    'Privacy policy',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subscriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ],
-            [
-                'title' => "SITES",
-                'list' => [
-                    'DC',
-                    'MAD Magazine',
-                    'DC Kids',
-                    'DC Universe',
-                    'DC Power Visa'
-                ]
-            ]
-        ];
-    
-        $links = [
-            [
-                'list' => [
-                    'CHARACTERS',
-                    'COMICS',
-                    'MOVIES',
-                    'TV',
-                    'GAMES',
-                    'COLLECTIBLES',
-                    'VIDEOS',
-                    'FANS',
-                    'NEWS',
-                    'SHOP',
-                ]
-            ]
-        ];
+        $icons = config('mylinks.icons');
+        $linkss = config('mylinks.linkss');
+        $links = config('mylinks.links');
         return view('comics.index', compact('comics', 'icons', 'links', 'linkss'));
     }
 
@@ -108,93 +24,9 @@ class ComicController extends Controller
      */
     public function create()
     {
-        $icons = [
-            [
-                'icon' => asset('img/buy-comics-digital-comics.png'),
-                'caption' => "DIGITAL COMICS",
-            ],
-            [
-                'icon' => asset('img/buy-comics-merchandise.png'),
-                'caption' => "DC MERCHANDISE",
-            ],
-            [
-                'icon' => asset('img/buy-comics-subscriptions.png'),
-                'caption' => "SUBSCRIPTION",
-            ],
-            [
-                'icon' => asset('img/buy-comics-shop-locator.png'),
-                'caption' => "COMIC SHOP LOCATOR",
-            ],
-            [
-                'icon' => asset('img/buy-dc-power-visa.svg'),
-                'caption' => "DC POWER VISA",
-            ],
-        ];
-    
-        $linkss = [
-            [
-                'title' => "DC COMICS",
-                'list' => [
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'Tv',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                'title' => "SHOP",
-                'list' => [
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ],
-            [
-                'title' => "DC",
-                'list' => [
-                    'Terms Of Use',
-                    'Privacy policy',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subscriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ],
-            [
-                'title' => "SITES",
-                'list' => [
-                    'DC',
-                    'MAD Magazine',
-                    'DC Kids',
-                    'DC Universe',
-                    'DC Power Visa'
-                ]
-            ]
-        ];
-    
-        $links = [
-            [
-                'list' => [
-                    'CHARACTERS',
-                    'COMICS',
-                    'MOVIES',
-                    'TV',
-                    'GAMES',
-                    'COLLECTIBLES',
-                    'VIDEOS',
-                    'FANS',
-                    'NEWS',
-                    'SHOP',
-                ]
-            ]
-        ];
+        $icons = config('mylinks.icons');
+        $linkss = config('mylinks.linkss');
+        $links = config('mylinks.links');
         return view('comics.create', compact('icons', 'links', 'linkss'));
     }
 
@@ -223,117 +55,49 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $icons = [
-            [
-                'icon' => asset('img/buy-comics-digital-comics.png'),
-                'caption' => "DIGITAL COMICS",
-            ],
-            [
-                'icon' => asset('img/buy-comics-merchandise.png'),
-                'caption' => "DC MERCHANDISE",
-            ],
-            [
-                'icon' => asset('img/buy-comics-subscriptions.png'),
-                'caption' => "SUBSCRIPTION",
-            ],
-            [
-                'icon' => asset('img/buy-comics-shop-locator.png'),
-                'caption' => "COMIC SHOP LOCATOR",
-            ],
-            [
-                'icon' => asset('img/buy-dc-power-visa.svg'),
-                'caption' => "DC POWER VISA",
-            ],
-        ];
-    
-        $linkss = [
-            [
-                'title' => "DC COMICS",
-                'list' => [
-                    'Characters',
-                    'Comics',
-                    'Movies',
-                    'Tv',
-                    'Games',
-                    'Videos',
-                    'News'
-                ]
-            ],
-            [
-                'title' => "SHOP",
-                'list' => [
-                    'Shop DC',
-                    'Shop DC Collectibles',
-                ]
-            ],
-            [
-                'title' => "DC",
-                'list' => [
-                    'Terms Of Use',
-                    'Privacy policy',
-                    'Ad Choices',
-                    'Advertising',
-                    'Jobs',
-                    'Subscriptions',
-                    'Talent Workshops',
-                    'CPSC Certificates',
-                    'Ratings',
-                    'Shop Help',
-                    'Contact Us'
-                ]
-            ],
-            [
-                'title' => "SITES",
-                'list' => [
-                    'DC',
-                    'MAD Magazine',
-                    'DC Kids',
-                    'DC Universe',
-                    'DC Power Visa'
-                ]
-            ]
-        ];
-
-        $links = [
-        [
-            'list' => [
-                'CHARACTERS',
-                'COMICS',
-                'MOVIES',
-                'TV',
-                'GAMES',
-                'COLLECTIBLES',
-                'VIDEOS',
-                'FANS',
-                'NEWS',
-                'SHOP',
-            ]
-        ]
-    ];
+        $icons = config('mylinks.icons');
+        $linkss = config('mylinks.linkss');
+        $links = config('mylinks.links');
         return view('comics.show', compact('comic', 'icons', 'links', 'linkss'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comic $comic)
     {
-        //
+        $icons = config('mylinks.icons');
+        $linkss = config('mylinks.linkss');
+        $links = config('mylinks.links');
+
+        return view('comics.edit', compact('comic', 'icons', 'links', 'linkss'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;
+
+        $comic->save();
+
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
