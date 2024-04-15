@@ -19,11 +19,21 @@
 
         <div class="d-flex gap-2">
             <img class="w-25" src="{{ $comic->thumb }}" alt="">
-            <div>
-                <strong>Artisti:</strong> {{ $comic['artists'] }}
-            <br>
-                <strong>Scrittori:</strong> {{ $comic['writers'] }}
+
+            <div class="d-flex flex-column justify-content-between">
+                <div>
+                    <strong>Artisti:</strong> {{ $comic['artists'] }}
+                <br>
+                    <strong>Scrittori:</strong> {{ $comic['writers'] }}
+                </div>
+    
+                <div>
+                    <strong>Genere:</strong> {{ $comic['series'] }}
+                <br>
+                    <strong>Categoria:</strong> {{ $comic['type'] }}
+                </div>
             </div>
+            
         </div>
     </div>
 
