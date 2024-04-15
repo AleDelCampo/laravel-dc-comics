@@ -9,22 +9,31 @@
 
         <p>
             {{ $comic->description }}
+
+            <br>
+
+            <span>
+                {{ $comic->price }}
+            </span>
         </p>
 
         <img src="{{ $comic->thumb }}" alt="">
+
+        
 
         <div>
             Artisti: {{ $comic['artists'] }}
             <br>
             Scrittori: {{ $comic['writers'] }}
         </div>
+
     </div>
 
     
 
     <div>
-        <a class="btn btn-success fw-bold border-black" href="{{route('comics.edit', $comic->id)}}">Modificalo!!</a>
-        <button type="button" class="btn btn-danger fw-bold border-black" id="destroyComicBtn">Distruggi Fumetto</button>
+        <a class="btn btn-success fw-bold border-black" href="{{route('comics.edit', $comic->id)}}"><i class="fa-solid fa-pencil"></i> Modificalo!!</a>
+        <button type="button" class="btn btn-danger fw-bold border-black" id="destroyComicBtn"><i class="fa-solid fa-trash-can"></i> Distruggi Fumetto</button>
     </div>
 </div>
 

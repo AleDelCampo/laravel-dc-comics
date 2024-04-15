@@ -10,7 +10,7 @@
 
         <div class="mb-2">
           <label for="title" class="form-label">Titolo: </label>
-          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
+          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}" required>
           @error('title')
           <div class="invalid-feedback">
               {{$message}}
@@ -40,7 +40,7 @@
 
         <div class="mb-2">
             <label for="price" class="form-label">Prezzo: </label>
-            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
+            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}" required>
             @error('price')
             <div class="invalid-feedback">
               {{$message}}
@@ -60,7 +60,7 @@
 
         <div class="mb-2">
             <label for="sale_date" class="form-label">Data d'uscita: </label>
-            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value="{{ old('sale_date') }}">
+            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" value="{{ old('sale_date') }}" required>
             @error('sale_date')
             <div class="invalid-feedback">
               {{$message}}

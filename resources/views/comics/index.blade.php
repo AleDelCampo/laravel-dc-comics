@@ -17,6 +17,6 @@
     
 </div>
 <div class="d-flex justify-content-center my-bg">
-    <a href="{{route('comics.create')}}" class="btn btn-primary mb-4">Inserisci il tuo fumetto preferito!!</a>
+    <a href="{{route('comics.create')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-file-arrow-up"></i> Inserisci il tuo fumetto preferito!!</a>
 </div>
 @endsection

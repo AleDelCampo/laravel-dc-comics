@@ -11,7 +11,7 @@
 
         <div class="mb-2">
           <label for="title" class="form-label">Titolo: </label>
-          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') ?? $comic->title }}" name="title">
+          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') ?? $comic->title }}" name="title" required>
           @error('title')
           <div class="invalid-feedback">
               {{$message}}
@@ -41,7 +41,7 @@
 
         <div class="mb-2">
             <label for="price" class="form-label">Prezzo: </label>
-            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" value="{{ old('price') ?? $comic->price }}" name="price">
+            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" value="{{ old('price') ?? $comic->price }}" name="price" required>
             @error('price')
             <div class="invalid-feedback">
               {{$message}}
@@ -61,7 +61,7 @@
 
         <div class="mb-2">
             <label for="sale_date" class="form-label">Data d'uscita: </label>
-            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" value="{{ old('sale_date') ?? $comic->sale_date }}" name="sale_date">
+            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" value="{{ old('sale_date') ?? $comic->sale_date }}" name="sale_date" required>
             @error('sale_date')
             <div class="invalid-feedback">
               {{$message}}
@@ -79,7 +79,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Registra!!</button>
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i>Registra!!</button>
 
     </form>
 </div>
