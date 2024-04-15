@@ -17,21 +17,19 @@
             </span>
         </p>
 
-        <img src="{{ $comic->thumb }}" alt="">
-
-        
-
-        <div>
-            Artisti: {{ $comic['artists'] }}
+        <div class="d-flex gap-2">
+            <img class="w-25" src="{{ $comic->thumb }}" alt="">
+            <div>
+                <strong>Artisti:</strong> {{ $comic['artists'] }}
             <br>
-            Scrittori: {{ $comic['writers'] }}
+                <strong>Scrittori:</strong> {{ $comic['writers'] }}
+            </div>
         </div>
-
     </div>
 
     
 
-    <div>
+    <div class="d-flex align-items-end gap-2">
         <a class="btn btn-success fw-bold border-black" href="{{route('comics.edit', $comic->id)}}"><i class="fa-solid fa-pencil"></i> Modificalo!!</a>
         <button type="button" class="btn btn-danger fw-bold border-black" id="destroyComicBtn"><i class="fa-solid fa-trash-can"></i> Distruggi Fumetto</button>
     </div>
