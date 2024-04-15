@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -35,6 +36,8 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validation($request->all());
+
         $newComic = new Comic();
 
         $newComic->title = $request->title;
@@ -58,6 +61,7 @@ class ComicController extends Controller
         $icons = config('mylinks.icons');
         $linkss = config('mylinks.linkss');
         $links = config('mylinks.links');
+
         return view('comics.show', compact('comic', 'icons', 'links', 'linkss'));
     }
 
@@ -78,6 +82,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $this->validation($request->all());
+
         $comic->title = $request->title;
         $comic->description = $request->description;
         $comic->thumb = $request->thumb;
@@ -99,5 +105,21 @@ class ComicController extends Controller
         $comic->delete();
 
         return redirect()->route('comics.index');
+    }
+
+    private function validation($data) {
+
+        Validator::make($data, [
+            'title' => 'required|max:100',
+            'description' => 'nullable|max:8000',
+            'thumb' => 'nullable',
+            'price' => 'required|max:1000',
+            'series' => 'nullable|max:1000',
+            'sale_date' => 'required',
+            'type' => 'nullable|max:1000',
+        ],[
+            'title.required' => 'Inserisci Titolo',
+            'title.max' => "Puoi usare al massimo :max caratteri",
+        ])->validate(); 
     }
 }
