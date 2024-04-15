@@ -78,7 +78,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Registra!!</button>
+        <button type="submit" class="btn btn-primary"><i class="fa-regular fa-paper-plane"></i> Registra!!</button>
 
     </form>
 </div>
