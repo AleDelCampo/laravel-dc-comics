@@ -113,13 +113,20 @@ class ComicController extends Controller
             'title' => 'required|max:100',
             'description' => 'nullable|max:8000',
             'thumb' => 'nullable',
-            'price' => 'required|max:1000',
-            'series' => 'nullable|max:1000',
+            'price' => 'required|max:4',
+            'series' => 'nullable|max:100',
             'sale_date' => 'required',
-            'type' => 'nullable|max:1000',
+            'type' => 'nullable|max:100',
         ],[
             'title.required' => 'Inserisci Titolo',
             'title.max' => "Puoi usare al massimo :max caratteri",
+            'description.max' => "Puoi usare al massimo :max caratteri",
+            'price.required' => 'Inserisci le cifre del Prezzo',
+            'price.max' => "Limite di prezzo $9999",
+            'series.max' => "Puoi usare al massimo :max caratteri",
+            'sale_date.required' => 'Inserisci la data di pubblicazione',
+            'type.max' => "Puoi usare al massimo :max caratteri",
+
         ])->validate(); 
     }
 }
