@@ -2,11 +2,12 @@
     <div id="links-cnt">
         <div id="footer-list">
             @foreach($linkss as $linkList)
-                <div class="links-list pointer">
-                    <h4>{{ $linkList['title'] }}</h4>
+                <div class="links-list">
+                    
                     <ul>
+                        <h4>{{ $linkList['title'] }}</h4>
                         @foreach($linkList['list'] as $currentLink)
-                            <li>{{ $currentLink }}</li>
+                            <li class="pointer">{{ $currentLink }}</li>
                         @endforeach
                     </ul>
                 </div>

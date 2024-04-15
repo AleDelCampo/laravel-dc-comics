@@ -29,6 +29,7 @@
 
 #links-cnt {
     padding: 28px;
+    text-align: left;
 }
 
 #socials-footer {
@@ -62,7 +63,7 @@ span {
     gap: 20px;
 }
 
-.links-list ul {
+.links-list ul li {
     list-style-type: none;
     font-size: 0.8em;
     color: #959595;
@@ -71,5 +72,5 @@ span {
 .links-list:nth-child(2) {
     position: absolute;
     bottom: 68px;
-    left: 350px;
+    left: 348px;
 }
