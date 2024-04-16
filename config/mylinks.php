@@ -3,23 +3,23 @@
 return [
     'icons' => [
         [
-            'icon' => asset('img/buy-comics-digital-comics.png'),
+            'icon' => 'img/buy-comics-digital-comics.png',
             'caption' => "DIGITAL COMICS",
         ],
         [
-            'icon' => asset('img/buy-comics-merchandise.png'),
+            'icon' => 'img/buy-comics-merchandise.png',
             'caption' => "DC MERCHANDISE",
         ],
         [
-            'icon' => asset('img/buy-comics-subscriptions.png'),
+            'icon' => 'img/buy-comics-subscriptions.png',
             'caption' => "SUBSCRIPTION",
         ],
         [
-            'icon' => asset('img/buy-comics-shop-locator.png'),
+            'icon' => 'img/buy-comics-shop-locator.png',
             'caption' => "COMIC SHOP LOCATOR",
         ],
         [
-            'icon' => asset('img/buy-dc-power-visa.svg'),
+            'icon' => 'img/buy-dc-power-visa.svg',
             'caption' => "DC POWER VISA",
         ],
     ],
