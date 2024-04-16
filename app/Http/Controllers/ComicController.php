@@ -18,6 +18,7 @@ class ComicController extends Controller
         $icons = config('mylinks.icons');
         $linkss = config('mylinks.linkss');
         $links = config('mylinks.links');
+        
         return view('comics.index', compact('comics', 'icons', 'links', 'linkss'));
     }
 
@@ -29,6 +30,7 @@ class ComicController extends Controller
         $icons = config('mylinks.icons');
         $linkss = config('mylinks.linkss');
         $links = config('mylinks.links');
+
         return view('comics.create', compact('icons', 'links', 'linkss'));
     }
 

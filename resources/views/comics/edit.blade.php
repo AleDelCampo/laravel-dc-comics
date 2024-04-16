@@ -79,7 +79,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i>Registra!!</button>
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i> Registra!!</button>
 
     </form>
 </div>
