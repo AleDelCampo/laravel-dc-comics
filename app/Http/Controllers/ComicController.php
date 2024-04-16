@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\StoreComicRequest;
 
 class ComicController extends Controller
 {
@@ -34,19 +35,13 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $this->validation($request->all());
+        $request->validated();
 
         $newComic = new Comic();
 
-        $newComic->title = $request->title;
-        $newComic->description = $request->description;
-        $newComic->thumb = $request->thumb;
-        $newComic->price = $request->price;
-        $newComic->series = $request->series;
-        $newComic->sale_date = $request->sale_date;
-        $newComic->type = $request->type;
+        $newComic->fill($request->all());
 
         $newComic->save();
 
@@ -80,17 +75,11 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(StoreComicRequest $request, Comic $comic)
     {
-        $this->validation($request->all());
+        $request->validated();
 
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->thumb = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;
+        $comic->update($request->all());
 
         $comic->save();
 
@@ -105,28 +94,5 @@ class ComicController extends Controller
         $comic->delete();
 
         return redirect()->route('comics.index');
-    }
-
-    private function validation($data) {
-
-        Validator::make($data, [
-            'title' => 'required|max:100',
-            'description' => 'nullable|max:8000',
-            'thumb' => 'nullable',
-            'price' => 'required',
-            'series' => 'nullable|max:100',
-            'sale_date' => 'required',
-            'type' => 'nullable|max:100',
-        ],[
-            'title.required' => 'Inserisci Titolo',
-            'title.max' => "Puoi usare al massimo :max caratteri",
-            'description.max' => "Puoi usare al massimo :max caratteri",
-            'price.required' => 'Inserisci le cifre del Prezzo',
-            'price.max' => "Limite di prezzo $9999",
-            'series.max' => "Puoi usare al massimo :max caratteri",
-            'sale_date.required' => 'Inserisci la data di pubblicazione',
-            'type.max' => "Puoi usare al massimo :max caratteri",
-
-        ])->validate(); 
     }
 }
