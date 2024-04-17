@@ -19,7 +19,7 @@
     <div class="container py-4 d-flex flex-column align-items-center">
         <h1 class="mb-4">La Boolblioteca.</h1>
     
-        <a href="{{route('comics.index')}}" class="btn btn-primary ciao p-5">Divora tutti i nostri fumetti!!</a>
+        <a href="{{route('comics.index')}}" class="btn btn-primary home-btn p-5">Divora tutti i nostri fumetti!!</a>
     </div>
 
     @include('comics/jumbo')
